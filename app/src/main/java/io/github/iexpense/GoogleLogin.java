@@ -1,5 +1,5 @@
 package io.github.iexpense;
 
-// This class implementa necessary functions for Google Login.
+// This class implements necessary functions for Google Login.
 public class GoogleLogin {
 }
