@@ -2,6 +2,8 @@ package io.github.iexpense;
 
 import java.util.ArrayList;
 
+import org.joda.money.Money;
+
 public class Expense {
     private Money money;
     private ArrayList<String> tags;  // sorted
@@ -9,7 +11,7 @@ public class Expense {
 
     // Default constructor required for calls to DataSnapshot.getValue(Expense.class)
     public Expense() {
-        this.money = new Money();
+        this.money = null;
         this.tags = new ArrayList<>();
         this.date = System.currentTimeMillis();
     }
