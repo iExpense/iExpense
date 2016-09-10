@@ -25,4 +25,4 @@ gen/
 *.swp
 
 # Configuration File
-/app/google-service.json
+/app/google-services.json
