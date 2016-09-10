@@ -31,7 +31,7 @@
         android:layout_marginTop="180dp"
         android:layout_height="72dp"
         card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="24dp">
+        card_view:cardElevation="16dp">
 
         <TextView
             android:text="expense: $60"
@@ -50,7 +50,7 @@
         android:layout_height="72dp"
         android:layout_marginTop="300dp"
         card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="24dp">
+        card_view:cardElevation="16dp">
         <TextView
             android:text="income: $54"
             android:textSize="24sp"
