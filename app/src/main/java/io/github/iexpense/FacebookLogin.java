@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 
-import com.facebook.FacebookSdk;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -25,7 +24,6 @@ public class FacebookLogin implements Login {
     private AuthCredential mCredential;
 
     public FacebookLogin(Activity activity) {
-        FacebookSdk.sdkInitialize(activity.getApplicationContext());
         AppEventsLogger.activateApp(activity.getApplication());
 
         this.usingFBLogin = false;

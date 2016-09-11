@@ -1,6 +1,5 @@
 package io.github.iexpense;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.facebook.FacebookSdk;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity
 
         // facebook login setup
         this.fblogin = new FacebookLogin(this);
-        View view = findViewById(R.id.button_google_login);
+        View view = findViewById(R.id.button_facebook_login);
         fblogin.registerOnClickListener(this, view);
 
         // google login setup
