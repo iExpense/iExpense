@@ -52,6 +52,7 @@ public class GoogleLogin implements Login, GoogleApiClient.OnConnectionFailedLis
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setUsingGLogin(true);
                 Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
                 activity.startActivityForResult(signInIntent, RC_SIGN_IN);
             }
@@ -70,15 +71,14 @@ public class GoogleLogin implements Login, GoogleApiClient.OnConnectionFailedLis
     }
 
     public AuthCredential onActivityResult(int requestCode, int resultCode, Intent data) {
-        this.setUsingGLogin(true);
-
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()) {
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
             } else {
-                Log.d(TAG, "google:onFail");
+                Log.d(TAG, "google:onFail :: " + result.getStatus());
+                this.setUsingGLogin(false);
             }
         }
 

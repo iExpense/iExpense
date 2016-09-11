@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity
         } else if (this.glogin.isSet()) {
             credential = this.glogin.onActivityResult(requestCode, resultCode, data);
         } else {
-            Log.d(TAG, "onActivityResult: unexpected login");
+            Log.w(TAG, "onActivityResult: unexpected login");
             return;
         }
 
@@ -138,6 +138,7 @@ public class MainActivity extends AppCompatActivity
                     });
         } else {
             Log.d(TAG, "login activity failed");
+            Toast.makeText(getApplicationContext(), "Google login failed!", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -152,14 +153,14 @@ public class MainActivity extends AppCompatActivity
     }
 
     void signOut() {
-        mAuth.signOut();
+        this.mAuth.signOut();
 
         if (this.fblogin.isSet()) {
             this.fblogin.signOut();
         } else if (this.glogin.isSet()) {
             this.glogin.signOut();
         } else {
-            Log.d(TAG, "onActivityResult: unexpected login");
+            Log.d(TAG, "onActivityResult: unexpected logout");
         }
     }
 
