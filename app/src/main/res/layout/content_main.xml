@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:color="#F2F2F2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -11,5 +12,62 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_gravity="center">
+        <android.support.v4.widget.DrawerLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="#255B88"
+            android:id="@+id/expense"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-</RelativeLayout>
+        </android.support.v4.widget.DrawerLayout>
+
+        <android.support.v4.widget.DrawerLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="90dp"
+            android:layout_height="72dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="#255B88"
+                android:id="@+id/income"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </android.support.v4.widget.DrawerLayout>
+        <!--<shape-->
+            <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--android:shape="rectangle"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="72dp"-->
+            <!--android:orientation="vertical"-->
+            <!--android:text="hello"-->
+            <!--android:layout_gravity="center">-->
+        <!--</shape>-->
+
+        <!--<shape-->
+            <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--android:shape="rectangle"-->
+            <!--android:width="500dp"-->
+            <!--android:layout_height="72dp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_marginTop="120dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:id="@+id/view">-->
+        <!--</shape>-->
+
+    </RelativeLayout>
+
+</LinearLayout>
