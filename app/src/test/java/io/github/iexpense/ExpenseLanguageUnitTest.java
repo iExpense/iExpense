@@ -6,7 +6,9 @@ import org.junit.Test;
 
 import java.util.HashMap;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class ExpenseLanguageUnitTest {
     private ExpenseLanguage el;
@@ -14,7 +16,7 @@ public class ExpenseLanguageUnitTest {
     @Before
     public void setUp() {
         HashMap<Integer, String> tag_map = new HashMap<>();
-        el = new ExpenseLanguage(tag_map, 0);
+        el = new ExpenseLanguage(tag_map);
     }
 
     @After
@@ -64,8 +66,10 @@ public class ExpenseLanguageUnitTest {
         try {
             el.parseExpense("income #cash 100");
             fail();
-        } catch (NumberFormatException e) {
+        } catch (ParseExpenseException e) {
+            assertEquals(e.getCause().getClass(), NumberFormatException.class);
         } catch (Exception e) {
+            e.printStackTrace();
             fail();
         }
     }

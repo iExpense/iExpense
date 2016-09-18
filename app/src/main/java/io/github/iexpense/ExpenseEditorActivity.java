@@ -4,10 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 
-/**
- * Created by Narottam on 9/12/2016.
- */
-public class expenseEditor extends Activity {
+public class ExpenseEditorActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +16,6 @@ public class expenseEditor extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width* .8),(int) (height* .6));
+        getWindow().setLayout((int) (width * .8), (int) (height * .6));
     }
 }

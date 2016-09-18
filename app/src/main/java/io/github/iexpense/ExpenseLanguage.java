@@ -7,11 +7,9 @@ import java.util.Map;
 // string into expense object.
 public class ExpenseLanguage {
     HashMap<Integer, String> tag_map;
-    int max_tag;
 
-    public ExpenseLanguage(HashMap<Integer, String> tag_map, int max_tag) {
+    public ExpenseLanguage(HashMap<Integer, String> tag_map) {
         this.tag_map = tag_map;
-        this.max_tag = max_tag;
     }
 
     // Possible formats:
@@ -58,9 +56,9 @@ public class ExpenseLanguage {
                 }
             }
 
-            this.tag_map.put(max_tag, tag);
-            expense.addTag(max_tag);
-            max_tag += 1;
+            int cur_tag_index = this.tag_map.size();
+            this.tag_map.put(cur_tag_index, tag);
+            expense.addTag(cur_tag_index);
         }
 
         return expense;

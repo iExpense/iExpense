@@ -1,29 +1,28 @@
 package io.github.iexpense;
 
+import org.joda.money.CurrencyUnit;
+import org.joda.money.Money;
+
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.joda.money.CurrencyUnit;
-import org.joda.money.Money;
-
 public class Expense {
-    private Money money;
-    private Set<Integer> tags;
-    private long date;
-    private int expenseType;
-
-    // constants
-    final int ROUNDING_MODE = BigDecimal.ROUND_HALF_EVEN;
+    // expense types
+    public static final int TYPE_BASE = 0;
+    public static final int TYPE_TRANSFER = 1;
+    public static final int TYPE_INCOME = 2;
     static int GLOBAL_SCALE = 2;
 
     // global parameters
     private static CurrencyUnit GlobalCurrencyUnit = CurrencyUnit.USD;
 
-    // expense types
-    public static final int TYPE_BASE = 0;
-    public static final int TYPE_TRANSFER = 1;
-    public static final int TYPE_INCOME = 2;
+    // constants
+    final int ROUNDING_MODE = BigDecimal.ROUND_HALF_EVEN;
+    private Money money;
+    private Set<Integer> tags;
+    private long date;
+    private int expenseType;
 
     // Default constructor required for calls to DataSnapshot.getValue(Expense.class)
     public Expense() {
@@ -45,6 +44,14 @@ public class Expense {
         this.tags = tags;
         this.date = System.currentTimeMillis();
         this.expenseType = expenseType;
+    }
+
+    public static CurrencyUnit getGlobalCurrencyUnit() {
+        return GlobalCurrencyUnit;
+    }
+
+    public static void setGlobalCurrencyUnit(CurrencyUnit globalCurrencyUnit) {
+        GlobalCurrencyUnit = globalCurrencyUnit;
     }
 
     public Money getMoney() {
@@ -99,14 +106,6 @@ public class Expense {
 
     public void setCurrencyUnit(CurrencyUnit currencyUnit) {
         this.setMoney(this.getMoney().withCurrencyUnit(currencyUnit));
-    }
-
-    public static CurrencyUnit getGlobalCurrencyUnit() {
-        return GlobalCurrencyUnit;
-    }
-
-    public static void setGlobalCurrencyUnit(CurrencyUnit globalCurrencyUnit) {
-        GlobalCurrencyUnit = globalCurrencyUnit;
     }
 
     public String toString() {

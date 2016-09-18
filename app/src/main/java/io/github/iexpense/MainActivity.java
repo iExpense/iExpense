@@ -4,17 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.util.Log;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.facebook.FacebookSdk;
@@ -61,7 +60,7 @@ public class MainActivity extends AppCompatActivity
         newExpenseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: implement onClickListener here for adding new expense
+                startActivity(new Intent(MainActivity.this, ExpenseEditorActivity.class));
             }
         });
 
@@ -89,14 +88,6 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         };
-
-        Button addExpenseBtn = (Button) findViewById(R.id.button);
-        addExpenseBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,expenseEditor.class));
-            }
-        });
     }
 
     @Override
@@ -185,7 +176,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.settings, menu);
         return true;
     }
 
