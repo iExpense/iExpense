@@ -6,4 +6,6 @@
     <string name="facebook_title_text">Facebook Login</string>
     <string name="loading">Loading…</string>
     <string name="sign_out">Sign Out</string>
+    <string name="balance">Balance</string>
+    <string name="expense">expense</string>
 </resources>

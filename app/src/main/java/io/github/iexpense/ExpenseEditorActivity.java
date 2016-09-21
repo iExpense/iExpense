@@ -10,12 +10,5 @@ public class ExpenseEditorActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.editor_main);
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
-
-        getWindow().setLayout((int) (width * .8), (int) (height * .6));
     }
 }
