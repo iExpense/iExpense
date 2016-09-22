@@ -8,4 +8,7 @@
     <string name="sign_out">Sign Out</string>
     <string name="balance">Balance</string>
     <string name="expense">expense</string>
+    <string name="type">hello</string>
+    <string name="_text_help">#50$ #transfer #aman</string>
+    <string name="transfer_suggestion">you transfered 50$ to AMAN</string>
 </resources>

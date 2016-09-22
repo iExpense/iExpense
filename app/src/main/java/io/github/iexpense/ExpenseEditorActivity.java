@@ -2,7 +2,6 @@ package io.github.iexpense;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 
 public class ExpenseEditorActivity extends Activity {
     @Override
