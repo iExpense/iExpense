@@ -3,22 +3,47 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
+    android:background="@color/colorWindows"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:weightSum="1">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="#ffffff"
+        tools:ignore="UselessParent">
 
-        <AutoCompleteTextView
-            android:id="@+id/autocomplete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="24dp"
-            android:hint="Your Expanse Editor"/>
-    </android.support.v7.widget.CardView>
+        <EditText
+            android:id="@+id/editor_textInput"
+            android:background="@android:color/transparent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:hint="Your expanse editor"
+            android:inputType="number"
+            android:layout_toLeftOf="@+id/addExpense"
+            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"
+            android:paddingLeft="16dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:onClick="addExpense"
+            android:text="add"
+            android:textAlignment="center"
+            android:layout_alignBaseline="@+id/editor_textInput"
+            android:layout_alignBottom="@+id/editor_textInput"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/addExpense"
+            tools:ignore="HardcodedText" />
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+        <!--</android.support.v7.widget.CardView>-->
+    </RelativeLayout>
 </LinearLayout>
 
